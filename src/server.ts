@@ -5,10 +5,9 @@ import bodyParser from 'body-parser';
 import { ProductController } from './controllers/Product';
 
 export class SetupServer extends Server {
-
   /*
    * mesmo que this.port = port, declarar como privado aqui
-   * adicionará a variável de porta à instância SetupServer 
+   * adicionará a variável de porta à instância SetupServer
    */
   constructor(private port = 3000) {
     super();
@@ -17,7 +16,7 @@ export class SetupServer extends Server {
   /*
    * Usamos um método diferente para o init em vez de usar o construtor desta
    * forma permitimos que o servidor seja usado em testes e inicialização
-   * normal 
+   * normal
    */
   public async init(): Promise<void> {
     this.setupExpress();

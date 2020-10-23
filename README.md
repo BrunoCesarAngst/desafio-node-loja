@@ -1,5 +1,8 @@
 # Uma API para cadastro de produtos para uma loja genérica.
 
+### Ferramentas utilizadas
+	- Node.js, TypeScript, Express, Overnight.js, Ts-Node, Eslint, Module-Alias, Jest, Supertest
+
 ### Minhas escolhas
 	- TypeScript: A possibilidade de descobrir erros durante o desenvolvimento e incrementar a inteligência (IntelliSense) da IDE que estamos utilizando. Ter funcionalidades da linguagem que ainda não estão disponíveis de forma nativa, por exemplo, no Node.js podemos utilizar os ES Modules (import/export) normalmente.
 	- Module-alias: Para facilitar os acessos aos arquivos.
