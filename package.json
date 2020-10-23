@@ -1,0 +1,34 @@
+{
+  "name": "desafio-node-loja",
+  "version": "1.0.0",
+  "description": "Uma API para cadastro de produtos para uma loja genérica",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "yarn build && node dist/src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BrunoCesarAngst/desafio-node-loja.git"
+  },
+  "keywords": [
+    "api",
+    "node.js",
+    "typescript"
+  ],
+  "author": "Bruno Cesar Angst",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/BrunoCesarAngst/desafio-node-loja/issues"
+  },
+  "homepage": "https://github.com/BrunoCesarAngst/desafio-node-loja#readme",
+  "devDependencies": {
+    "@types/module-alias": "^2.0.0",
+    "@types/node": "^14.14.2",
+    "typescript": "^4.0.3"
+  },
+  "dependencies": {
+    "module-alias": "^2.2.2"
+  }
+}

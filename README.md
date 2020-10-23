@@ -1,7 +1,8 @@
-# Criação de API em NodeJS
+# Uma API para cadastro de produtos para uma loja genérica.
 
-## História
-Dentro de uma arquitetura de micro serviço precisamos de uma API para cadastro de produtos para uma loja genérica.
+### Minhas escolhas
+	- TypeScript: A possibilidade de descobrir erros durante o desenvolvimento e incrementar a inteligência (IntelliSense) da IDE que estamos utilizando. Ter funcionalidades da linguagem que ainda não estão disponíveis de forma nativa, por exemplo, no Node.js podemos utilizar os ES Modules (import/export) normalmente.
+	- Module-alias: Para facilitar os acessos aos arquivos.
 
 ### Requisitos funcionais
 	- Como gerente gostaria de adicionar um novo produto ao catálogo da loja
@@ -29,4 +30,3 @@ Dentro de uma arquitetura de micro serviço precisamos de uma API para cadastro 
 	- Estrutura de arquivos
 	- Padrão de escrita do código
 	- Utilização de boas práticas
-
