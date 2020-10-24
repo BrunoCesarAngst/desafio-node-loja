@@ -1,0 +1,16 @@
+{
+  "App": {
+    "port": 3000,
+    "database": {
+      "mongoUrl": "mongodb://localhost:27017/store_products"
+    },
+    "auth": {
+      "key": "some-key",
+      "tokenExpiresIn": "20000000"
+    },
+    "logger": {
+      "enabled": true,
+      "level": "info"
+    }
+  }
+}

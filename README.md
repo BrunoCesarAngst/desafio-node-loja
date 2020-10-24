@@ -1,7 +1,10 @@
 # Uma API para cadastro de produtos para uma loja genérica.
 
+### instruções
+	- $ docker run -p 27017:27017 -d mongo
+
 ### Ferramentas utilizadas
-	- Node.js, TypeScript, Express, Overnight.js, Ts-Node, Eslint, Module-Alias, Jest, Supertest
+	- Node.js, TypeScript, Express, Overnight.js, Ts-Node, Eslint, Module-Alias, Jest, Supertest, Prettier
 
 ### Minhas escolhas
 	- TypeScript: A possibilidade de descobrir erros durante o desenvolvimento e incrementar a inteligência (IntelliSense) da IDE que estamos utilizando. Ter funcionalidades da linguagem que ainda não estão disponíveis de forma nativa, por exemplo, no Node.js podemos utilizar os ES Modules (import/export) normalmente.

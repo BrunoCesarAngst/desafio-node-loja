@@ -4,6 +4,8 @@ import { Application } from 'express';
 import bodyParser from 'body-parser';
 import { ProductController } from './controllers/Product';
 
+import * as database from '@src/database'
+
 export class SetupServer extends Server {
   /*
    * mesmo que this.port = port, declarar como privado aqui
@@ -21,6 +23,7 @@ export class SetupServer extends Server {
   public async init(): Promise<void> {
     this.setupExpress();
     this.setupControllers();
+    await this.databaseSetup();
   }
 
   private setupExpress(): void {
@@ -31,6 +34,14 @@ export class SetupServer extends Server {
   private setupControllers(): void {
     const productController = new ProductController();
     this.addControllers([productController]);
+  }
+
+  private async databaseSetup(): Promise<void> {
+    await database.connect()
+  }
+
+  public async close(): Promise<void> {
+    await database.close()
   }
 
   public getApp(): Application {

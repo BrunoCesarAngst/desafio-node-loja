@@ -1,8 +1,9 @@
+import { ProductController } from '@src/controllers/Product';
+
 describe('Product list functional testing ', () => {
   it('should return a list of products', async () => {
-    const { body, status } = await global.testRequest.get('/products');
-    expect(status).toBe(200);
-    expect(body).toEqual([
+    const products = new ProductController;
+    expect(products).toBe([
       {
         code: '1',
         name: 'Product A',
