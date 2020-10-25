@@ -10,14 +10,11 @@ export class ProductController {
     res.send([
       {
         name: 'Product A',
+        department: 'toys',
         description: 'first test product',
         price: 100.0,
-      },
-      {
-        name: 'Product B',
-        description: 'secund test product',
-        price: 200.0,
-      },
+        quantity: 15,
+      }
     ]);
   }
 

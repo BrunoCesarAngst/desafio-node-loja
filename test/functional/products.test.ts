@@ -8,8 +8,10 @@ describe('Products functional testing ', () => {
     it('should create a product with success', async () => {
       const newProduct = {
         name: 'Product A',
+        department: 'toys',
         description: 'first test product',
         price: 100.0,
+        quantity: 15,
       };
 
       const response = await global.testRequest
@@ -22,8 +24,10 @@ describe('Products functional testing ', () => {
     it('should return validation error when a field is invalid', async () => {
       const newProduct = {
         name: 'Product A',
+        department: 'toys',
         description: 'first test product',
-        price: 'invalid_string',
+        price: 'NaN',
+        quantity: 15,
       };
       const response = await global.testRequest
         .post('/products')
@@ -33,7 +37,7 @@ describe('Products functional testing ', () => {
       expect(response.status).toBe(422);
       expect(response.body).toEqual({
         error:
-        'Product validation failed: price: Cast to Number failed for value "invalid_string" at path "price"',
+          'Product validation failed: price: Cast to Number failed for value "NaN" at path "price"',
       });
     });
 
@@ -41,15 +45,17 @@ describe('Products functional testing ', () => {
       jest
         .spyOn(Product.prototype, 'save')
         .mockImplementationOnce(() => Promise.reject('fail to create beach'));
-        const newProduct = {
-          name: 'Product A',
-          description: 'first test product',
-          price: 100.0,
-        };
+      const newProduct = {
+        name: 'Product A',
+        department: 'toys',
+        description: 'first test product',
+        price: 100.0,
+        quantity: 15,
+      };
 
       const response = await global.testRequest
         .post('/products')
-        .send(newProduct)
+        .send(newProduct);
       expect(response.status).toBe(500);
       expect(response.body).toEqual({
         error: 'Internal server error',

@@ -3,8 +3,8 @@ import { Server } from '@overnightjs/core';
 import { Application } from 'express';
 import bodyParser from 'body-parser';
 import { ProductController } from './controllers/product';
-
-import * as database from '@src/database'
+import { UsersController } from './controllers/users';
+import * as database from '@src/database';
 
 export class SetupServer extends Server {
   /*
@@ -33,15 +33,16 @@ export class SetupServer extends Server {
 
   private setupControllers(): void {
     const productController = new ProductController();
-    this.addControllers([productController]);
+    const userController = new UsersController();
+    this.addControllers([productController, userController]);
   }
 
   private async databaseSetup(): Promise<void> {
-    await database.connect()
+    await database.connect();
   }
 
   public async close(): Promise<void> {
-    await database.close()
+    await database.close();
   }
 
   public getApp(): Application {
