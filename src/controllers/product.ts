@@ -1,4 +1,5 @@
-import { Controller, Get, Post } from '@overnightjs/core';
+import { Controller, Get, Middleware, Post } from '@overnightjs/core';
+import { authMiddleware } from '@src/middlewares/auth';
 import { Product } from '@src/models/products';
 import { Request, Response } from 'express';
 import mongoose from 'mongoose';
@@ -19,9 +20,10 @@ export class ProductController {
   }
 
   @Post('')
+  @Middleware(authMiddleware)
   public async create(req: Request, res: Response): Promise<void> {
     try {
-      const products = new Product(req.body);
+      const products = new Product({...req.body, ...{admin: req.decoded?.id}});
       const result = await products.save();
       res.status(201).send(result);
     } catch (err) {

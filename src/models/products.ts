@@ -1,4 +1,4 @@
-import mongoose, { Document, Model } from 'mongoose';
+import mongoose, { Document, Model, Schema } from 'mongoose';
 
 export enum Department {
   TOYS = 'toys',
@@ -38,6 +38,7 @@ const schema = new mongoose.Schema<Product>(
       // get: getPrice,
     },
     quantity: { type: Number, required: 'The quantity is required' },
+    admin: { type: Schema.Types.ObjectId, ref: 'Admin', required: true },
   },
   {
     toJSON: {
